@@ -1,9 +1,10 @@
 extends layout
 
 block content
-  h1= title
-  p Enter your id & pw
-  form( method='POST', action='/check')
-    input( type='text', name='id') br
-    input( type='password', name='pw')
-    input( type='submit', name='enter')
+  .wrapper
+      form.board-form(action="/" method="post")
+        | タイトル: 
+        input.input(type="text" name="title" required="")
+        br
+        br
+        button.submit(type="submit") ボード作成

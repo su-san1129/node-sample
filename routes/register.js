@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var moment = require('moment');
-var connection = require('../mysqlConnection');
+// var moment = require('moment');
+// var connection = require('../mysqlConnection');
 
 router.get('/',function(req,res,next){
   res.render('register',{
@@ -15,7 +15,7 @@ router.post('/', function(req, res, next){
   var password = req.body.password;
   var createdAt = moment().format('YYYY-MM-DD HH:mm:ss');
   var emailExistsQuery = 'SELECT * FROM users WHERE email = "' + email + '" LIMIT 1';
-  var registerQuery = 'INSERT INTO users (user_name, email, password, created_at) VALUES ("' + userName + '", '"'+ email + '",' + '"' password '", ' + '"' + createdAt + '")';
+  // var registerQuery = 'INSERT INTO users (user_name, email, password, created_at) VALUES ("' + userName + '", '"'+ email + '",' + '"' password '", ' + '"' + createdAt + '")';
   connection.query(query, function(err, email){
     var emailExists = email.length;
     if (emailExists){
